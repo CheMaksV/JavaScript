@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<div class="products"></div>
+<script>
+    let productsDiv = document.getElementsByClassName('products')[0];
+    let productsJSON = localStorage.getItem('cart');
+    let products = JSON.parse(productsJSON);
+    console.log(products);
+
+    for (const product of products) {
+        let productBlock = document.createElement('div');
+        let h2 = document.createElement('h2');
+        h2.innerText = `${product.title} ${product.price} UAH`;
+            let img = document.createElement('img');
+        img.src = product.image;
+        let button = document.createElement('button');
+        productBlock.append(h2, img);
+        productsDiv.appendChild(productBlock);
+    }
+</script>
+</body>
+</html>
