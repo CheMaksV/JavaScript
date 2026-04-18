@@ -1,0 +1,42 @@
+const obj = {name: 'vasya'};
+if (obj.age) {
+    console.log('here');
+} else {
+    console.log('else');
+}
+
+console.log(!!obj.name);
+console.log(!!obj.age); //undefined
+
+console.log('name' in obj);
+let resolt = 'age' in obj;
+console.log(resolt);
+let newVar = Object.create(obj);
+
+console.log(newVar);
+console.log(newVar.name);
+
+console.log('name' in newVar);
+
+if (newVar.name) {
+    console.log('!!!');
+}
+
+
+const obj2 = {
+    a: false,
+    b: 0,
+    c: "",
+    d: null,
+    e: undefined
+}
+
+if (obj2.a) {
+    console.log('a');
+}
+if (obj2.b) {
+    console.log('b');
+}
+
+console.log('a' in obj2);
+console.log('b' in obj2);
